@@ -1,3 +1,8 @@
+// menu
+const hamburger=document.querySelector('.hamburger')
+const menu=document.querySelector('.navbar')
+
+
 // view buttons
 const viewbutton1=document.querySelector('.view-one')
 const viewbutton2=document.querySelector('.view-two')
@@ -20,12 +25,7 @@ const moved4=document.querySelector('.moved-four')
 const moved5=document.querySelector('.moved-five')
 
 
-// project description (right side of every project)
-const brand1=document.querySelector('.brand-one')
-const brand2=document.querySelector('.brand-two')
-const brand3=document.querySelector('.brand-three')
-const brand4=document.querySelector('.brand-four')
-const brand5=document.querySelector('.brand-five')
+// project description (right side of every projecview
 
 
 //details buttons
@@ -45,6 +45,13 @@ viewbutton4.innerText="VIEW"
 viewbutton5.innerText="VIEW"
 
 
+//hamburger menu
+hamburger.addEventListener('click',()=>{
+   hamburger.classList.toggle('isactive')
+   menu.classList.toggle('isactive')
+   
+})
+
 
 viewbutton1.addEventListener('click',()=>{
    if(!state1){
@@ -56,7 +63,7 @@ viewbutton1.addEventListener('click',()=>{
       project1.classList.toggle('show')
      })
      if(state1){
-     viewbutton1.innerText="CLOSE"
+     viewbutton1.innerText="close"
      state1=false
     }
      else{
@@ -77,7 +84,7 @@ viewbutton2.addEventListener('click',()=>{
      project2.classList.toggle('show')
     })
     if(state2){
-    viewbutton2.innerText="CLOSE"
+    viewbutton2.innerText="close"
     state2=false
    }
     else{
@@ -97,7 +104,7 @@ viewbutton3.addEventListener('click',()=>{
      project3.classList.toggle('show')
     })
     if(state3){
-    viewbutton3.innerText="CLOSE"
+    viewbutton3.innerText="close"
     state3=false
    }
     else{
@@ -117,7 +124,7 @@ viewbutton4.addEventListener('click',()=>{
      project4.classList.toggle('show')
     })
     if(state4){
-    viewbutton4.innerText="CLOSE"
+    viewbutton4.innerText="close"
     state4=false
    }
     else{
@@ -137,7 +144,7 @@ viewbutton5.addEventListener('click',()=>{
      project5.classList.toggle('show')
     })
     if(state5){
-    viewbutton5.innerText="CLOSE"
+    viewbutton5.innerText="close"
     state5=false
    }
     else{

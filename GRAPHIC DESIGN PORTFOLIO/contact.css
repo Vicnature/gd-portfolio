@@ -211,3 +211,126 @@ body{
         font-size:11px;
     }
 }
+
+
+
+.navbar{
+    color:white;
+    top:0;
+    display:block;
+    left:100%;
+    width:100%;
+    background:var(--colorB);
+    z-index:3;
+    position:fixed;
+    transition:0.5s;
+}
+
+.navbar.isactive{
+    left:0;
+    transition:0.4s;
+
+}
+
+.navbar{
+    display:flex;
+    background:none;
+    justify-content:space-around;
+    width:100%;
+    /* border:2px solid red; */
+    align-items:center;
+    /* background:rgba(0,0,0,.45); */
+}
+
+ul li{
+    list-style-type:none;
+    transition:1s;
+    width:100%;
+    /* border:2px solid black; */
+}
+
+a{
+    text-decoration:none;
+    display:block;
+    text-align:center;
+    margin-bottom:16px;
+    /* padding:15px 16px;
+     */
+     padding:4%;
+    /* background:var(--colorC); */
+    /* border:2px solid black; */
+    color:white;
+    font-family:Aileron bold;
+    transition:0.5s;
+
+}
+
+
+.navbar li a:hover{
+    color:var(--colorB);
+    cursor:pointer;
+    background:rgba(0,0,0,.55)
+}
+
+
+.hamburger{
+    display:block;
+    /* border:2px solid red; */
+    width:35px;
+    cursor:pointer;
+    height:35px;
+    appearance:none;
+    background:none;
+    outline:none;
+    border:none;
+    position:absolute;
+    align-self:flex-end;
+    top:1%;
+    right:2%;
+    z-index:4;
+    position:fixed;
+    /* background:yellow; */
+    /* background:black; */
+}
+
+
+.hamburger .bar,.hamburger::after,.hamburger::before{
+    width:100%;
+    height:5px;
+    /* background-color:var(--colorA); */
+    background-color:black;
+    transition:0.4s;
+    content:'';
+    display:block;
+    margin:6px 0px;
+}
+
+.hamburger.isactive::before{
+    transform:rotate(-45deg) translate(-8px,6px);
+}
+.hamburger.isactive::after{
+    transform:rotate(45deg) translate(-9px,-8px)
+}
+.hamburger.isactive .bar{
+    opacity:0;
+}
+
+@media(max-width:768px){
+    .navbar{
+    color:white;
+    top:0;
+    display:block;
+    left:100%;
+    justify-content:space-between;
+    width:100%;
+    /* border:2px solid var(--colorA); */
+    background:var(--colorB);
+    /* min-height:100vh; */
+    z-index:3;
+    /* padding-top:8%; */
+    position:fixed;
+    transition:0.5s;
+    color:yellow;
+}
+
+}

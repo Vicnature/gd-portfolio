@@ -3,12 +3,22 @@ const email=document.getElementById('email')
 const username=document.getElementById('name')
 const contact=document.getElementById('contact')
 const remarks=document.getElementById('remarks')
+const hamburger=document.querySelector('.hamburger')
+const menu=document.querySelector('.navbar')
 
 form.addEventListener('submit',(e)=>{
     e.preventDefault()
 
     validateInputs()
 })
+
+
+hamburger.addEventListener('click',()=>{
+    hamburger.classList.toggle('isactive')
+    menu.classList.toggle('isactive')
+    
+})
+
 
 const setError=(element,message)=>{
     const inputControl=element.parentElement
