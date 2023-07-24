@@ -416,7 +416,7 @@ a{
     height:65vh;
     width:40vw;
     /* border:2px solid blue; */
-    border-radius:10%;
+    border-radius:5%;
     overflow:hidden;
     opacity:0;
     transform:translateY(80vh);
@@ -440,19 +440,26 @@ a{
 .feature .feature-explanation{
     width:55%;
     /* border:2px solid red; */
-    padding:5%;
+    padding:2%;
+    padding-left:10%;
     margin:0.2%;
+    min-height:80%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
 .feature .feature-explanation h1{
     font-family:Aileron bold;
+    font-size:2.9rem;
 }
 
 
 .feature .feature-explanation p{
     font-family:Aileron;
-    font-size:1.1rem;
-    line-height:1.4rem;
+    font-size:1.15rem;
+    line-height:1.5rem;
+    letter-spacing: 0.05rem;
 }
 
 .feature span{
@@ -476,7 +483,6 @@ a{
     /* flex-wrap:wrap; */
     background:linear-gradient(to bottom,
     rgba(10, 196, 245,.3),rgba(245, 59, 10,.3));
-    transition:1s;
     margin-bottom:10%;
 }
 
@@ -504,9 +510,9 @@ a{
 
 .head{
     background:black;
-    color:white;
+    /* color:white; */
     padding:0.5%;
-    font-family:Aileron bold;
+    /* font-family:Aileron bold; */
     letter-spacing:0.1rem;
     font-size:1.5rem;
     overflow:hidden;
@@ -517,6 +523,15 @@ a{
     /* animation:slide 10s infinite linear; */
 }
 
+.scroller{
+    height:5%;
+    /* border:2px solid red; */
+    width:100%;
+    display:flex;
+    color:white;
+    animation:slide 205s infinite linear;
+    white-space: nowrap;
+}
 .head h1{
     font-family:Aileron bold;
     letter-spacing:0.1rem;
@@ -525,15 +540,15 @@ a{
     display:block;
     /* width:500px; */
     /* border:2px solid white; */
-    animation:slide 55s infinite linear;
+  
 }
 
 @keyframes slide{
     0%{
-transform:translateX(-550%);
+transform:translateX(-50%);
     }
     100%{
-transform:translateX(550%);
+transform:translateX(100%);
     }
 }
 
@@ -550,9 +565,9 @@ transform:translateX(550%);
     width:80%;
     font-family:Aileron;
     line-height:1.4rem;
-    letter-spacing:0.08rem;
-    font-size:1rem;
-    border-left:5px solid var(--colorA);
+    letter-spacing:0.065rem;
+    font-size:1.3rem;
+    /* border-left:1px solid var(--colorA); */
     padding:5%;
     /* text-shadow:0px 5px 10px rgba(0,0,0,.7); */
     /* border:1px solid green; */
@@ -565,14 +580,16 @@ transform:translateX(550%);
     opacity:0;
     font-size:3rem;
     color:white;
+    color:black;
     
 }
+
 
 
 .part-2{
     max-width:100vw;
     min-height:100vh;
-    opacity:0;
+    opacity:1;
     /* display:none; */
     transition:1s;
     /* transform:translateY(500%); */
@@ -611,3 +628,78 @@ body.isactive{
     /* transform:translateY(-100vh); */
 }
 
+
+.feature-explanation .description{
+    /* border:2px solid blue; */
+    margin-top:3%;
+    /* max-width:75%; */
+    /* line-height: 1.4rem; */
+    letter-spacing:0.04rem;
+
+    min-height:60%;
+}
+
+.feature-explanation .description span{
+    color:blue;
+    font-family:Aileron;
+}
+
+.feature-explanation .description {
+    text-align: left;
+    /* border:2px solid orange; */
+}
+
+.feature .feature-explanation .title{
+    /* color:yellow; */
+    /* border:2px solid blue; */
+    display:flex;
+    /* justify-content:center; */
+    align-items:center;
+    /* width:75%; */
+}
+
+
+@media(max-width:568px){
+    .feature{
+        flex-direction:column;
+        flex-wrap:nowrap;
+        /* border:2px solid red; */
+        margin-bottom:1%;
+        min-height:120vh;
+        /* justify-content:center; */
+    }
+
+
+    .feature .feature-explanation{
+        width:85%;
+        min-height:30vh;
+        margin:0;
+        padding-left:0;
+        /* border:2px solid red; */
+        /* flex-wrap:wrap; */
+        padding:0;
+    }
+    
+    .feature-explanation .description{
+        /* border:2px solid blue; */
+        min-height:30%;
+        margin:0;
+    }
+    .feature .image{
+        width:70vw;
+        /* border:2px solid red; */
+        min-height:6vh;
+        margin:0;
+    }
+
+    .feature .feature-explanation h1{
+        font-size:1.9rem;
+        /* border:2px solid red; */
+    }
+
+    .feature .feature-explanation p{
+        font-size:1rem;
+        /* border:2px solid red; */
+
+    }
+}
