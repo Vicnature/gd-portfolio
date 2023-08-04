@@ -12,12 +12,36 @@ const secondpart=document.querySelector(".part-2")
 const launch=document.querySelector(".launch-portfolio")
 
 launch.addEventListener('click',()=>{
-    firstpart.classList.add('isactive')
-    secondpart.classList.add('isactive')
-    firstpart.parentElement.classList.add('isactive')
-    menu.classList.add('burger-2')
-    menu.style.background="white"
+    firstpart.classList.toggle('isactive')
+    secondpart.classList.toggle('isactive')
+    firstpart.parentElement.classList.toggle('isactive')
+    menu.classList.toggle('burger-2')
 })
+
+
+
+const checker=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            window.addEventListener('load',()=>{
+                // window.location.href="home.html"
+                firstpart.classList.toggle('isactive')
+                secondpart.classList.toggle('isactive')
+                firstpart.parentElement.classList.toggle('isactive')
+                menu.classList.toggle('burger-2')
+
+            })
+        }
+    })
+})
+
+// abouts.forEach(about=>{
+//     checker.observe(about)
+// })
+
+checker.observe(secondpart)
+
+
 
 launch.addEventListener('mouseover',()=>{
     background1.classList.toggle('darkened')
@@ -70,8 +94,7 @@ let mover=setInterval(()=>{
         whytext.style.opacity=0;
         whybox.style.opacity=1;
         // section.style.background=colors[position]
-        // section.style.background=`linear-gradient(to right,${colors[position][1]},${colors[position][0]})`
-        section.style.background=`linear-gradient(to ${direction[position]},rgba(245, 59, 10,.3),rgba(10, 196, 245,.3))`
+        section.style.background=`linear-gradient(to right,${colors[position][1]},${colors[position][0]})`
         whybox.style.transform=`translateY(${-value}vh)`
         position+=1   
         value=value+100
@@ -88,15 +111,15 @@ let mover=setInterval(()=>{
     }
 },10000)
 
-const direction=["top","right","left","bottom","right"]
 
-// const colors=[
-//     ["purple","lightsalmon"],
-//     ["blue","orange"],
-//     ["yellow","green"],
-//     ["white","lightorange"],
-//     ["lightgreen","blue"]
-// ]
+
+const colors=[
+    ["purple","lightsalmon"],
+    ["blue","orange"],
+    ["yellow","green"],
+    ["white","lightorange"],
+    ["lightgreen","blue"]
+]
 
 console.log(colors[4][1])
 // alert(colors[0][0])
